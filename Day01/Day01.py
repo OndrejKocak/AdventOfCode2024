@@ -19,5 +19,12 @@ def distanceBetweenLists(listA, listB):
         listB.remove(minB)
     return totalDistance
 
+def similiarityBetweenLists(listA, listB):
+    totalSimilarity = 0
+    for i in listA:
+        totalSimilarity += i* listB.count(i)
+    return totalSimilarity
+
 listA, listB = loadInput("input01.txt")
-print(distanceBetweenLists(listA, listB))
+print("List Distance: ", distanceBetweenLists(listA.copy(), listB.copy()))
+print("List Similiarity: ", similiarityBetweenLists(listA, listB))
